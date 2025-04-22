@@ -21,8 +21,25 @@
         <a href="#" aria-label="LinkedIn">💼</a>
         <a href="#" aria-label="Download Resume">⬇️</a>
       </div>
+      <button class="hamburger" aria-label="Open menu">☰</button>
     </nav>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" aria-label="Close menu">×</button>
+    <ul class="mobile-nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-social-icons">
+      <a href="#" aria-label="GitHub">🐙</a>
+      <a href="#" aria-label="LinkedIn">💼</a>
+      <a href="#" aria-label="Download Resume">⬇️</a>
+    </div>
+  </div>
 
   <main>
     <section class="hero-card">
@@ -39,7 +56,6 @@
       I’m blending marketing and data to drive growth.
     </p>
 
-    <!-- ABOUT SECTION -->
     <section class="about-section" id="about">
       <div class="about-content">
         <h2>About</h2>
@@ -64,8 +80,6 @@
         <a href="#" class="tag">Workflow Optimizer</a>
       </div>
     </section>
-    <!-- END ABOUT SECTION -->
-
   </main>
 
   <footer class="footer">
@@ -78,5 +92,18 @@
       <a href="#" aria-label="Download Resume">⬇️</a>
     </div>
   </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  </script>
 </body>
 </html>

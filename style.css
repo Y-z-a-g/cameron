@@ -1,197 +1,240 @@
 :root {
-    --cream:      #FEFAE0;
-    --sage:       #CCD5AE;
-    --tan:        #DDA15E;
-    --rust:       #BC6C25;
-    --black:      #000;
-  }
-  
-  /* Reset & Base */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--black);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-  
-  /* Navigation */
+  --cream:  #FEFAE0;
+  --sage:   #CCD5AE;
+  --tan:    #DDA15E;
+  --rust:   #BC6C25;
+  --black:  #000;
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul { list-style: none; }
+a  { text-decoration: none; color: inherit; }
+
+/* Base styles */
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Desktop navbar */
+.navbar {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 1rem 2rem;
+  background: var(--cream);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 4px 4px var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-weight: bold; padding-bottom: 2px; }
+.nav-links a.active { border-bottom: 2px solid var(--sage); }
+.social-icons a { font-size: 1.4rem; margin-left: 1rem; }
+
+/* Hamburger - hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: var(--black);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+/* Hero section */
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.hero-card {
+  background: var(--sage);
+  border: 4px solid var(--black);
+  border-radius: 20px;
+  box-shadow: 8px 8px var(--black);
+  padding: 2rem;
+}
+.intro h2,
+.intro p {
+  margin: 0;
+  color: var(--black);
+}
+.intro h2 { font-size: 2.5rem; }
+.intro p  { font-size: 1.25rem; }
+
+.name-card {
+  background: var(--cream);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+.name-card h1 {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: 'Arial Black', sans-serif;
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* About section */
+.about-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  display: flex;
+  gap: 2rem;
+  background: var(--tan);
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  box-shadow: 8px 8px var(--black);
+  padding: 2rem;
+}
+.about-content {
+  flex: 2;
+  background: var(--cream);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+}
+.about-content h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+.about-content p  { margin-bottom: 1rem; line-height: 1.5; }
+.tags {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tag {
+  background: var(--rust);
+  color: var(--black);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px var(--black);
+}
+
+/* Footer */
+.footer {
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--sage);
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 4px 4px var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-text { font-size: 0.95rem; line-height: 1.4; }
+.footer-icons a { font-size: 1.4rem; margin-left: 1rem; }
+.footer-icons a:hover { transform: scale(1.1); }
+
+/* Mobile overlay menu */
+.mobile-menu {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--tan);
+  border: 4px solid var(--black);
+  box-shadow: 8px 8px var(--black);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  z-index: 1000;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+.mobile-nav-links a {
+  font-size: 1.5rem; font-weight: bold;
+}
+.mobile-social-icons {
+  display: flex; gap: 1.5rem;
+  margin-top: auto; padding-bottom: 2rem;
+}
+.mobile-social-icons a { font-size: 1.75rem; }
+
+/* Responsive (≤600px) */
+@media (max-width: 600px) {
+  /* Remove desktop navbar box */
   .navbar {
-    max-width: 900px;
-    margin: 2rem auto 0;
-    padding: 1rem 2rem;
-    background: var(--cream);
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    box-shadow: 4px 4px var(--black);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
     padding: 0;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--black);
-    font-weight: bold;
-    padding-bottom: 2px;
-  }
-  
-  .nav-links a.active {
-    border-bottom: 2px solid var(--sage);
-  }
-  
-  .social-icons a {
-    font-size: 1.4rem;
-    margin-left: 1rem;
-    text-decoration: none;
-  }
-  
-  /* Hero Section */
-  main {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  
-  .hero-card {
-    background: var(--sage);
-    border: 4px solid var(--black);
-    border-radius: 20px;
-    box-shadow: 8px 8px var(--black);
-    padding: 2rem;
-  }
-  
-  .intro h2,
-  .intro p {
     margin: 0;
-    color: var(--black);
   }
-  
-  .intro h2 {
+  .nav-links,
+  .social-icons {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  /* match your example’s mobile spacing */
+  main {
+    margin: 6rem auto 2rem;
+  }
+  .hero-card {
+    padding: 2.5rem;
+  }
+  .tagline {
+    margin: 3rem auto;
+  }
+
+  /* stack About & tags vertically */
+  .about-section {
+    flex-direction: column;
+    margin: 4rem auto;
+  }
+  .tags {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .name-card h1 {
     font-size: 2.5rem;
   }
-  
-  .intro p {
-    font-size: 1.25rem;
-  }
-  
-  .name-card {
-    background: var(--cream);
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-  
-  .name-card h1 {
-    margin: 0;
-    font-size: 4rem;
-    line-height: 1;
-    color: var(--black);
-    font-family: 'Arial Black', sans-serif;
-  }
-  
-  .tagline {
-    margin-top: 2rem;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--black);
-  }
-  
-  /* About Section */
-  .about-section {
-    max-width: 900px;
-    margin: 3rem auto;
-    display: flex;
-    gap: 2rem;
-    background: var(--tan);
-    border: 2px solid var(--black);
-    border-radius: 20px;
-    box-shadow: 8px 8px var(--black);
-    padding: 2rem;
-  }
-  
-  .about-content {
-    flex: 2;
-    background: var(--cream);
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    padding: 2rem;
-    text-align: left;
-  }
-  
-  .about-content h2 {
-    margin-top: 0;
-    font-size: 1.75rem;
-  }
-  
-  .about-content p {
-    margin: 1rem 0;
-    line-height: 1.5;
-    text-align: left;
-  }
-  
-  .tags {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .tag {
-    display: block;
-    background: var(--rust);
-    color: var(--black);
-    text-decoration: none;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 5px;
-    border: 2px solid var(--black);
-    box-shadow: 4px 4px var(--black);
-  }
-  
-  /* Footer */
-  .footer {
-    max-width: 900px;
-    margin: 3rem auto 2rem;
-    padding: 1.5rem 2rem;
-    background: var(--sage);
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    box-shadow: 4px 4px var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .footer-text {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  
-  .footer-icons a {
-    text-decoration: none;
-    color: var(--black);
-    font-size: 1.4rem;
-    margin-left: 1rem;
-  }
-  
-  .footer-icons a:hover {
-    transform: scale(1.1);
-  }
-  
+}
