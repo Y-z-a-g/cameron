@@ -1,39 +1,197 @@
-/* Reset & box‑sizing */
-* {
-    margin: 0;
-    padding: 0;
+:root {
+    --cream:      #FEFAE0;
+    --sage:       #CCD5AE;
+    --tan:        #DDA15E;
+    --rust:       #BC6C25;
+    --black:      #000;
+  }
+  
+  /* Reset & Base */
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
   
   body {
-    font-family: system-ui, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding: 20px;
+    margin: 0;
+    background: var(--cream);
+    color: var(--black);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
+  /* Navigation */
+  .navbar {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 4px 4px var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  nav a {
-    margin: 0 0.5rem;
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
     text-decoration: none;
+    color: var(--black);
     font-weight: bold;
+    padding-bottom: 2px;
   }
   
-  section {
-    margin-bottom: 2rem;
+  .nav-links a.active {
+    border-bottom: 2px solid var(--sage);
   }
   
-  .project {
-    margin-top: 1rem;
+  .social-icons a {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    text-decoration: none;
   }
   
-  footer {
+  /* Hero Section */
+  main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: #666;
+  }
+  
+  .hero-card {
+    background: var(--sage);
+    border: 4px solid var(--black);
+    border-radius: 20px;
+    box-shadow: 8px 8px var(--black);
+    padding: 2rem;
+  }
+  
+  .intro h2,
+  .intro p {
+    margin: 0;
+    color: var(--black);
+  }
+  
+  .intro h2 {
+    font-size: 2.5rem;
+  }
+  
+  .intro p {
+    font-size: 1.25rem;
+  }
+  
+  .name-card {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+  .name-card h1 {
+    margin: 0;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--black);
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .tagline {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--black);
+  }
+  
+  /* About Section */
+  .about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    display: flex;
+    gap: 2rem;
+    background: var(--tan);
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    box-shadow: 8px 8px var(--black);
+    padding: 2rem;
+  }
+  
+  .about-content {
+    flex: 2;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: left;
+  }
+  
+  .about-content h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+  }
+  
+  .about-content p {
+    margin: 1rem 0;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .tags {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tag {
+    display: block;
+    background: var(--rust);
+    color: var(--black);
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px var(--black);
+  }
+  
+  /* Footer */
+  .footer {
+    max-width: 900px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: var(--sage);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 4px 4px var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .footer-icons a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.4rem;
+    margin-left: 1rem;
+  }
+  
+  .footer-icons a:hover {
+    transform: scale(1.1);
   }
   
