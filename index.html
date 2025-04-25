@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- HEADER / NAV -->
   <header>
     <nav class="navbar">
       <ul class="nav-links">
@@ -42,6 +43,7 @@
     </nav>
   </header>
 
+  <!-- MOBILE OVERLAY MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="close-btn" aria-label="Close menu">×</button>
     <ul class="mobile-nav-links">
@@ -64,7 +66,9 @@
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <main>
+    <!-- HERO CARD -->
     <section class="hero-card">
       <div class="intro">
         <h2>Hello</h2>
@@ -75,10 +79,12 @@
       </div>
     </section>
 
+    <!-- TAGLINE -->
     <p class="tagline">
-      I’m blending marketing and data to drive growth.
+      Turning data into decisions, and insights into action.
     </p>
 
+    <!-- ABOUT SECTION -->
     <section class="about-section" id="about">
       <div class="about-content">
         <h2>About</h2>
@@ -104,52 +110,32 @@
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact">
       <div class="contact-intro">
         <h2>Excited to know more?</h2>
         <p>Let's talk!</p>
       </div>
-
       <form
         class="contact-form"
         action="https://formspree.io/f/xdkgnrjq"
         method="POST"
       >
         <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name"
-          required
-        />
-
+        <input type="text" id="name" name="name" placeholder="Name" required />
         <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email Address"
-          required
-        />
-
+        <input type="email" id="email" name="email" placeholder="Email Address" required />
         <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          placeholder="Message"
-          required
-        ></textarea>
-
+        <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
         <button type="submit" class="btn">Send</button>
       </form>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p class="footer-text">
-      Turning data into decisions, and insights into action.
+      I’m blending marketing and data to drive growth.
     </p>
     <div class="footer-icons">
       <a href="https://www.linkedin.com/in/cameron-yzaguirre/" target="_blank" aria-label="LinkedIn">
@@ -164,16 +150,25 @@
     </div>
   </footer>
 
+  <!-- JS FOR MOBILE MENU -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const closeBtn = document.querySelector('.close-btn');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.add('open');
     });
     closeBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+    });
+
+    // Close menu when any mobile link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
     });
   </script>
 </body>
